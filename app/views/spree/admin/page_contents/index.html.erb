@@ -8,14 +8,14 @@
       <div class="row">
         <div class="col-xs-12 col-md-6">
           <div data-hook="admin_page_content_index_search" class="form-group">
-            <%= f.label :title, Spree.t(:translations_title) %>
+            <%= f.label :title, Spree.t(:title) %>
             <%= f.search_field :translations_title_cont, class: "form-control js-quick-search-target js-filterable" %>
           </div>
         </div>
 
         <div class="col-xs-12 col-md-6">
           <div class="form-group">
-            <%= label_tag :slug, Spree.t(:translations_slug) %>
+            <%= label_tag :slug, Spree.t(:slug) %>
             <%= f.select :translations_slug_eq, Spree::PageContent.with_translations(I18n.locale).pluck(:slug), { include_blank: true }, class: 'select2 js-filterable' %>
           </div>
         </div>
