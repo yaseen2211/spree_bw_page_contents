@@ -1,0 +1,14 @@
+en:
+  spree:
+    admin:
+      tab:
+        page_contents: "PageContents"
+    new_page_content: "New PageContent"
+    listing_page_contents: "Listing PageContents"
+    editing_page_content: "Editing PageContent"
+  activerecord:
+    attributes:
+      spree/page_content:
+        title: Title
+        description: Description
+        slug: Slug
