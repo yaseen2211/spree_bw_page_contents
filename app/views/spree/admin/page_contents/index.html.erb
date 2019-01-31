@@ -2,6 +2,28 @@
   <%= Spree.t(:listing_page_contents) %>
 <% end %>
 
+<% content_for :table_filter do %>
+  <div data-hook="admin_page_content_sidebar">
+    <%= search_form_for [:admin, @search] do |f| %>
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <div data-hook="admin_page_content_index_search" class="form-group">
+            <%#= f.label :slug_cont, Spree.t(:title) %>
+            <%#= f.search_field :slug_cont, class: "form-control js-quick-search-target js-filterable" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-actions" data-hook="admin_page_contents_index_search_buttons">
+        <%= button Spree.t(:search), 'search' %>
+      </div>
+
+    <% end %>
+  </div>
+<% end %>
+
+
+
 <% content_for :page_actions do %>
   <%= button_link_to Spree.t(:new_page_content), new_object_url, class: 'btn-success', icon: 'add', id: 'admin_new_page_content_link' %>
 <% end if can?(:create, Spree::PageContent) %>
@@ -22,6 +44,10 @@
         <td data-hook="admin_page_contents_index_row_actions" class="actions text-right">
           <%= link_to_edit page_content, no_text: true %>
           <%= link_to_delete page_content, no_text: true %>
+          <% if page_content.persisted? %>
+            <%= link_to_with_icon 'translate', nil, spree.admin_translations_path('page_contents', page_content.id), title: Spree.t(:'i18n.translations'), class: 'btn btn-sm btn-primary' %>
+          <% end %>
+
         </td>
       </tr>
     <% end %>
