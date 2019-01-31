@@ -47,3 +47,29 @@ If you'd like to contribute, please take a look at the
 pull request.
 
 Copyright (c) 2019 [name of extension creator], released under the New BSD License
+
+
+
+Notes:
+
+Include the following gems into main extension
+
+gem 'spree_i18n', github: 'spree-contrib/spree_i18n'
+gem 'spree_globalize', github: 'spree-contrib/spree_globalize'
+
+
+
+To install the extension , run the following command:
+
+
+rails g spree_bw_page_contents:install
+
+
+To make any contact as dynamic globalize , Fetch the relevant content using scope and place where ever you want.
+
+
+<% product_content = Spree::PageContent.from_slug('en','home-products-collection').last %>
+<%# Globalize.with_locale (I18n.locale) do %> 
+  <h1><%= product_content.title %></h1>
+  <p><%= product_content.description%></p>
+<% end %>
