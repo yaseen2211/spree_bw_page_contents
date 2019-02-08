@@ -7,4 +7,4 @@
   <%= button_link_to Spree.t(:back_to_resource_list, resource: Spree::PageContent.model_name.human), spree.admin_page_contents_path, class: 'btn-primary', icon: 'arrow-left' %>
 <% end %>
 
-<%= render 'form' %>
+<%= render partial: 'form_override' %>
