@@ -2,11 +2,11 @@
 <%= render 'settings' %>
 <div class="row translations">
   <div class="col-md-4">
-    <%= render 'fields' %>
+    <%= render 'fields_override' %>
   </div>
   <div class="col-md-8">
     <%= form_for [:admin, @resource] , remote: :true do |f| %>
-      <%= render 'form_fields', f: f %>
+      <%= render 'form_fields_override', f: f %>
       <%= render 'spree/admin/shared/edit_resource_links' %>
     <% end %>
   </div>
