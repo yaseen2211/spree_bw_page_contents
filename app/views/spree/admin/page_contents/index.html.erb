@@ -40,6 +40,7 @@
     <tr data-hook="admin_page_contents_index_headers">
       <th><%= t(:title, scope: 'activerecord.attributes.spree/page_content') %></th>
       <th><%= t(:description, scope: 'activerecord.attributes.spree/page_content') %></th>
+      <th><%= t(:slug, scope: 'activerecord.attributes.spree/page_content') %></th>
       <th data-hook="admin_page_contents_index_header_actions" class="actions"></th>
     </tr>
   </thead>
@@ -48,6 +49,7 @@
       <tr id="<%= spree_dom_id page_content %>" data-hook="admin_page_contents_index_rows" class="<%= cycle('odd', 'even')%>">
         <td><%= link_to page_content.title, edit_object_url(page_content) %></td>
         <td><%= page_content.description %></td>
+         <td><%= page_content.slug %></td>
         <td data-hook="admin_page_contents_index_row_actions" class="actions text-right">
           <%= link_to_edit page_content, no_text: true %>
           <%= link_to_delete page_content, no_text: true %>
