@@ -12,5 +12,11 @@
       <%= error_message_on :page_content, :description %>
     <% end %>
 
+    <%= f.field_container :image, class: ['form-group'] do %>
+      <%= f.label :image %>
+      <%= f.file_field :image, class: 'form-control' %>
+      <%= error_message_on :page_content, :image %>
+    <% end %>
+
   </div>
 </div>
