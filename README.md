@@ -14,9 +14,10 @@ Introduction goes here.
   ```
    ```ruby
   gem 'spree_globalize', github: 'spree-contrib/spree_globalize'
-
+  ```
 
 2. Install the gem using Bundler:
+
   ```ruby
   bundle install
   ```
