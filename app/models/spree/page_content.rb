@@ -1,5 +1,7 @@
 module Spree
   class PageContent < Spree::Base
+
+	has_one_attached :image # one-to-one
   	translates :title, :description,:slug, fallbacks_for_empty_translations: true
   	include SpreeGlobalize::Translatable
   	
