@@ -6,7 +6,7 @@ require 'spree_bw_page_contents/version'
 
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
-  s.name        = 'spree_dev_bw_page_contents'
+  s.name        = 'spree_bw_page_contents'
   s.version     = SpreeBwPageContents.version
   s.summary     = 'Add extension summary here'
   s.description = 'Add (optional) extension description here'
